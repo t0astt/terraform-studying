@@ -51,8 +51,9 @@ resource "aws_instance" "app_server" {
   ami           = "ami-08d70e59c07c61a3a"
   instance_type = "t2.micro"              # instance type that qualifies for AWS free tier
 
+  # Tags the instance
   tags = {
-    Name = "ExampleAppServerInstance" # Tags the instance
+    Name = var.instance_name
   }
 }
 
