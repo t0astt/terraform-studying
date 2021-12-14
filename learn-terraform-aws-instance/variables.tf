@@ -4,6 +4,6 @@ Terraform loads all files in the current directory ending in .tf, so config file
 
 variable "instance_name" {
   description = "Value of the Name tag for the EC2 instance"
-  type = string
-  default = "ExampleAppServerInstance"
+  type        = string
+  default     = "ExampleAppServerInstance"
 }

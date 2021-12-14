@@ -49,7 +49,7 @@ resource "aws_instance" "app_server" {
   and create a new one if this is changed.
   */
   ami           = "ami-08d70e59c07c61a3a"
-  instance_type = "t2.micro"              # instance type that qualifies for AWS free tier
+  instance_type = "t2.micro" # instance type that qualifies for AWS free tier
 
   # Tags the instance
   tags = {
