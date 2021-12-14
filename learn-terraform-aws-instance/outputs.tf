@@ -14,5 +14,5 @@ output "instance_public_ip" {
 
 output "instance_public_dns" {
   description = "Public DNS of the EC2 instance"
-  value = aws_instance.app_server.public_dns
+  value       = aws_instance.app_server.public_dns
 }
