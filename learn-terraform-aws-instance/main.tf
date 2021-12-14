@@ -8,7 +8,7 @@ terraform {
       # Source defines optional hostname, namespace, and provider type
       # Providers are installed from terraform registry (https://registry.terraform.io/) by default
       # Source below is shorthand for registry.terraform.io/hashicorp/aws
-      source  = "hashicorp/aws"
+      source = "hashicorp/aws"
 
       # Recommended to constrain version to ensure terraform doesn't install a provider version that doesn't work
       # with your config.
@@ -26,7 +26,7 @@ A provider is a plugin that Terraform uses to create & manage resources
 Multiple provider blocks can be configured
 */
 provider "aws" {
-  profile = "default"  # Refers to the AWS creds stores in the AWS config file
+  profile = "default" # Refers to the AWS creds stores in the AWS config file
   region  = "us-west-2"
 }
 
@@ -43,11 +43,11 @@ Here, the ID for the EC2 instance will be aws_instance.app_server
 Resource blocks contain args to configure a resource.
 */
 resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"  # AMI ID of an Ubuntu image
-  instance_type = "t2.micro"  # instance type that qualifies for AWS free tier
+  ami           = "ami-830c94e3" # AMI ID of an Ubuntu image
+  instance_type = "t2.micro"     # instance type that qualifies for AWS free tier
 
   tags = {
-    Name = "ExampleAppServerInstance"  # Tags the instance
+    Name = "ExampleAppServerInstance" # Tags the instance
   }
 }
 
