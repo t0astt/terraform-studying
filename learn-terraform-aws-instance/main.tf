@@ -43,8 +43,13 @@ Here, the ID for the EC2 instance will be aws_instance.app_server
 Resource blocks contain args to configure a resource.
 */
 resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3" # AMI ID of an Ubuntu image
-  instance_type = "t2.micro"     # instance type that qualifies for AWS free tier
+  /*
+  AMI ID of an Ubuntu image.
+  AWS provider knows it can't change the AMI of an instance after creation, so Terraform will destroy the old instance
+  and create a new one if this is changed.
+  */
+  ami           = "ami-08d70e59c07c61a3a"
+  instance_type = "t2.micro"              # instance type that qualifies for AWS free tier
 
   tags = {
     Name = "ExampleAppServerInstance" # Tags the instance
